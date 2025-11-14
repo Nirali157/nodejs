@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejs</h1>
+    <form action="/insertt" method="post">
+        id <input type="text" name="id" placeholder="Enter id">
+        name <input type="text" name="name" placeholder="Enter name">
+        <input type="submit" >
+    </form>
+    <table border="1">
+        <tr>
+            <td>id</td>
+            <td>name</td>
+        </tr>
+        <% user1.map((el,i)=>{%>
+            <tr>
+                <td><%=el.id %></td>
+                <td><%=el.name %></td>
+                <td><a href="/deletee?id=<%=el.id %>">Delete</a></td>
+                <td><a href="/editt?id=<%=el.id %>">Edit</a></td>
+            </tr>
+      <%  }) %>
+    </table>
+</body>
+</html>
